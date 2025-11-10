@@ -1,18 +1,18 @@
 pkg install root-repo
 
-pkg update
+pkg update && pkg upgrade -y
 
 #Instala o Python 3
 
-pkg install python3
+pkg install python3 -y
 
 #Instalar o nodeJS 16x
 
-pkg install nodejs-lts
+pkg install nodejs-lts -y
 
 #Instalar o SQL Lite3 compilando ele do Source
 
-pkg install clang libsqlite pkg-config python make
+pkg install clang libsqlite pkg-config python make -y
 
 npm install sqlite3 --build-from-source --sqlite=/data/data/com.termux/files/usr/bin/sqlite3 -g
 
@@ -20,7 +20,7 @@ npm install sqlite3 --build-from-source --sqlite=/data/data/com.termux/files/usr
 
 npm install n8n -g --sqlite=/data/data/com.termux/files/usr/bin/sqlite3
 
-Instalar o pm2
+# Instalar o pm2
 
 npm install pm2 -g
 
@@ -32,7 +32,7 @@ pm2 start n8n
 
 #opção com tunnel para webhooks (não utilize em produção)
 
-pm2 start n8n —tunnel
+# pm2 start n8n —tunnel
 
 #salvar o estado do pm2
 
